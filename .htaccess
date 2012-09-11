@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !^/application/views/
+RewriteCond $1 !^(index\.php|robots\.txt)
+RewriteRule ^(.*)$ /index.php/$1 [L]
+
+
+RewriteCond %{REQUEST_URI} ^\.(jpg|gif|png|css|js|swf) 
+RewriteRule ^(.*) /application/views/index.html [L]

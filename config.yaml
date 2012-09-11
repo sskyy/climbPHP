@@ -1,0 +1,6 @@
+---
+name: xiniubiji
+version: 1
+handle:
+  - rewrite: if(!is_dir() && !is_file()) goto "index.php?%{QUERY_STRING}"
+...
