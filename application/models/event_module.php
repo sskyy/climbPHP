@@ -39,6 +39,10 @@ class event_module extends Module{
         return call_user_func_array(  array($this ,'trigger'), $args );
     }
 
+    public function bind( $event_name, $callback ){
+        $this -> events -> bind( $event_name, $callback );
+    }
+
 }
 
 ?>

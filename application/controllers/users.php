@@ -12,22 +12,28 @@ class Users extends MY_Controller {
         $this -> load -> view("index.php");
     }
     
+    // public function register(){
+    //     $data = $this -> xn_input -> fetch_data(array("email","password"));
+        
+    //     $register_user = $this -> xn_user -> register( $data );
+        
+    //     if( is_numeric( $register_user ) && $register_user == ERROR_USER_EXIST ){
+    //         $this -> xn_output -> output("error", "email {$data['email']} already exist" );
+    //     }else{
+    //         if( $register_user ){
+    //             $this -> xn_output -> output("data", $register_user -> to_object());
+    //         }else{
+    //             $this -> xn_output -> output("error", $data );
+    //         }
+    //     }
+    // }
+
     public function register(){
         $data = $this -> xn_input -> fetch_data(array("email","password"));
-        
-        $register_user = $this -> xn_user -> register( $data );
-        
-        if( is_numeric( $register_user ) && $register_user == ERROR_USER_EXIST ){
-            $this -> xn_output -> output("error", "email {$data['email']} already exist" );
-        }else{
-            if( $register_user ){
-                $this -> xn_output -> output("data", $register_user -> to_object());
-            }else{
-                $this -> xn_output -> output("error", $data );
-            }
-        }
+        $register_result = $this -> xn_user -> register( $data );
+        $this -> output -> output( $register_result );
     }
-    
+
     public function login(){
         $data = $this -> xn_input -> fetch_data(array("email","password"));
         
