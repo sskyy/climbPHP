@@ -358,5 +358,9 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 
+
+
+
+$config['moduleAutoload'] = array("user", "persistence", "book");
 /* End of file config.php */
 /* Location: ./application/config/config.php */

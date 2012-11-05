@@ -4,7 +4,7 @@
  *
  * @author sskyy
  */
-class require_module extends Module{
+class requireModule extends Module{
     
     private $CI;
     private $allowed_method = array("library", "helper", "model", "module");

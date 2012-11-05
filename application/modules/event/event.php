@@ -4,7 +4,7 @@
  *
  * @author jason
  */
-class event_module extends Module{
+class eventModule{
     private $manager;
     private $events;
     
@@ -17,12 +17,7 @@ class event_module extends Module{
         $this -> _build_event_center();
     }
      
-    public function on_upper_module_load( &$upper_module ){
-        if( method_exists(  $upper_module, "set_event_handler" )){
-            return $upper_module -> set_event_handler( $this -> events );
-        }
-        return false;
-    }
+
     
     private function _build_event_center(){
         $this -> manager -> get("require") -> library("Event");
@@ -41,6 +36,19 @@ class event_module extends Module{
 
     public function bind( $event_name, $callback ){
         $this -> events -> bind( $event_name, $callback );
+    }
+
+    public function list_binds(){
+        return $this -> events -> list_binds();
+    }
+
+
+
+    public function on_upper_module_load( &$upper_module ){
+        if( method_exists(  $upper_module, "set_event_handler" )){
+            return $upper_module -> set_event_handler( $this -> events );
+        }
+        return false;
     }
 
 }
