@@ -1,3 +1,5 @@
+*注意，climbPHP未来将会重新开发，整合到ICE Framework中。ICE Framework本质上是从climbPHP抽象出来的业务逻辑的开发规则。目前已有nodejs版的完整实现。[ice Framework](https://github.com/sskyy/icejs)*
+
 #climbPHP
 这是codeIgniter的扩展框架，提供了 “更好的模块化” “广播系统” “实体系统” 这三个主要的扩展功能。
 
@@ -49,7 +51,3 @@ climbPHP已经经历了一次较大规模的重构，内置已经实现了一下
 #问题反馈
 
 有任何问题或者你想加入climbPHP的开发都请email给我，谢谢。skyking_H@hotmail.com。
-
-
-
-
